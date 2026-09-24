@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="全局触摸记录（自定义数据库）"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- 数据库名称输入区域 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义数据库名称："
+        android:textSize="14sp"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/et_db_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="请输入数据库名称"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:maxLines="1"
+            android:background="@android:drawable/edit_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=".db"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <!-- 当前使用的数据库 -->
+    <TextView
+        android:id="@+id/tv_current_db"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="当前数据库：未设置"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="❌ 服务未启动"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/tv_click_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击「启动服务」开始记录全局触摸"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="#f0f0f0"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="启动服务"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="停止服务"
+            android:enabled="false"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_request_permission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请求悬浮窗权限"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btn_replay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="后台回放"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\n使用说明：\n1. 输入自定义数据库名称\n2. 点击「请求悬浮窗权限」\n3. 在设置中开启权限\n4. 点击「启动服务」\n5. 点击任意位置，记录将存入自定义数据库\n6. 点击「后台回放」可回放所有记录"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

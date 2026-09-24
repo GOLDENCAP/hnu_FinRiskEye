@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- 标题栏（不变） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无障碍点击记录"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="记录5次屏幕点击位置"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- 服务状态卡片（使用普通 LinearLayout 替代 CardView） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:padding="16dp">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="服务状态"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+        
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="检查中..."
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:background="#F0F0F0"
+            android:gravity="center" />
+        
+        <Button
+            android:id="@+id/btn_open_accessibility"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:text="开启无障碍服务"
+            android:backgroundTint="#FF9800" />
+    </LinearLayout>
+
+    <!-- 点击信息卡片 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:padding="16dp">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="记录信息"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+        
+        <TextView
+            android:id="@+id/tv_click_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="等待记录..."
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:padding="24dp"
+            android:background="#E8EAF6"
+            android:minHeight="150dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- 操作按钮（不变） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+        
+        <Button
+            android:id="@+id/btn_start_record"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="开始记录"
+            android:backgroundTint="#4CAF50"
+            android:enabled="false" />
+        
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="重置计数"
+            android:backgroundTint="#F44336" />
+    </LinearLayout>
+
+    <!-- 使用说明卡片 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:elevation="1dp"
+        android:padding="12dp">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📖 使用说明"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. 首次使用需开启无障碍服务\n2. 点击「开始记录」按钮\n3. 在任意应用界面点击屏幕（共5次）\n4. 系统会自动记录每次点击的坐标\n5. 记录满5次后服务自动停止"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="4dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="后台点击回放"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- 服务状态 -->
+        <TextView
+            android:id="@+id/tv_service_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="○ 无障碍服务：检测中..."
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- 记录数量 -->
+        <TextView
+            android:id="@+id/tv_record_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="记录数：0 条"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- 日期选择 -->
+        <Button
+            android:id="@+id/btn_select_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择数据库（历史记录）"
+            android:textSize="14sp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/tv_selected_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="使用默认数据库"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="15dp"/>
+
+        <!-- 参数设置 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="回放设置"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="点击间隔（毫秒）："
+                android:textSize="14sp"
+                android:gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/et_delay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:text="500"
+                android:hint="毫秒"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="循环次数："
+                android:textSize="14sp"
+                android:gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/et_loop_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:text="1"
+                android:hint="次"/>
+        </LinearLayout>
+
+        <!-- 进度显示 -->
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="准备就绪"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="0"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_current_click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="12sp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- 日志区域 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="执行日志"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#1A000000"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tv_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="等待回放开始..."
+                android:textSize="12sp"
+                android:textColor="#333333"
+                android:fontFamily="monospace"/>
+        </ScrollView>
+
+        <!-- 按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/btn_start_replay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="启动后台回放"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btn_stop_replay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="停止回放"
+                android:textSize="16sp"
+                android:enabled="false"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btn_return"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- 说明 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="说明：\n1. 后台回放将在通知栏显示进度\n2. 点击间隔越短，执行越快\n3. 程序会自动进入后台运行\n4. 可在通知栏随时停止回放"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginTop="30dp"/>
+    </LinearLayout>
+</ScrollView>

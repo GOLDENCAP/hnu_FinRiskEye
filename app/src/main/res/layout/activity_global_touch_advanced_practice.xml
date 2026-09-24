@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_practice_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="题目描述"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5" />
+
+        <TextView
+            android:id="@+id/tv_problem_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#444444"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="输入样例"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5" />
+
+        <TextView
+            android:id="@+id/tv_input_sample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#444444"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="#F5F5F5"
+            android:padding="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="预期输出"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5" />
+
+        <TextView
+            android:id="@+id/tv_expected_output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#444444"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="#F5F5F5"
+            android:padding="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="你的答案区域"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FF7043" />
+
+        <EditText
+            android:id="@+id/et_user_answer"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:drawable/edit_text"
+            android:gravity="top|start"
+            android:hint="请在这里写你的实现思路、伪代码或关键代码输出"
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_judge_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="校验答案" />
+
+        <Button
+            android:id="@+id/btn_show_reference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="显示参考答案" />
+
+        <Button
+            android:id="@+id/btn_open_lesson_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="返回查看对应教学讲解" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="判题结果"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FF7043"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tv_judge_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#444444"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FFF3E0"
+            android:padding="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="校验规则"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5" />
+
+        <TextView
+            android:id="@+id/tv_judge_rule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#444444"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="参考答案"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5" />
+
+        <TextView
+            android:id="@+id/tv_reference_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#444444"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="8dp"
+            android:background="#F5F5F5"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    
+    <TextView
+        android:id="@+id/tv_coordinates"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:text="点击屏幕任意位置\n坐标将被记录"
+        android:textSize="18sp"
+        android:background="#f0f0f0"
+        android:layout_marginBottom="16dp"/>
+    
+    <TextView
+        android:id="@+id/tv_record_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="记录数量: 0"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="#e0e0e0"
+        android:layout_marginBottom="16dp"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <Button
+            android:id="@+id/view_records_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="查看记录"
+            android:layout_marginEnd="8dp"/>
+        
+        <Button
+            android:id="@+id/clear_records_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="清空记录"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/retuen_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回"
+        android:layout_marginTop="16dp"/>
+    
+</LinearLayout>

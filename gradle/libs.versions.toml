@@ -1,0 +1,34 @@
+[versions]
+agp = "9.1.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.10.0"
+constraintlayout = "2.1.4"
+navigationFragment = "2.6.0"
+navigationUi = "2.6.0"
+activity = "1.8.0"
+socketio = "2.1.0"
+webrtc = "1.0.43591" #WebRTC M142
+easypermissions = "3.0.0" # 一个较新的稳定版本[citation:3]#easypermissions = "1.1.3"
+cardview = "1.0.0"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
+activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+socket-io = {group = "io.socket", name = "socket.io-client",version.ref = "socketio"}
+google-webrtc = { group = "com.infobip", name = "google-webrtc", version.ref = "webrtc" }#google-webrtc = {group = "org.webrtc", name = "google-webrtc", version.ref="webrtc"}
+easypermission = { group = "pub.devrel", name = "easypermissions", version.ref = "easypermissions" }#easypermission = {group = "pub.deverl", name = "easypermission", version.ref = "easypermissions"}
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+

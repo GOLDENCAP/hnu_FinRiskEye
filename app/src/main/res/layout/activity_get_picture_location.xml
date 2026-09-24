@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_picture_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="图片位置识别"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_picture"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFFFF"
+            android:contentDescription="待显示图片"
+            android:scaleType="fitCenter" />
+
+        <Button
+            android:id="@+id/btn_toggle_picture_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="加载图片" />
+
+        <TextView
+            android:id="@+id/tv_picture_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="点击按钮后加载图片，再点击一次隐藏图片。"
+            android:textSize="16sp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">chapter07</string>
+    <string name="accessibility_service_description">Chapter07 无障碍服务，用于模拟屏幕点击、长按和滑动操作</string>
+</resources>

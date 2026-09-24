@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "E:\\AndroidProject\\chapter07\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\androidsdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "E:\\AndroidProject\\chapter07\\app\\.cxx\\RelWithDebInfo\\2c1hk287\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\androidsdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "E:\\AndroidProject\\chapter07\\app\\.cxx\\RelWithDebInfo\\2c1hk287\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "chapter07::@6890427a1f51a3e7e1df": {
+      "artifactName": "chapter07",
+      "abi": "x86",
+      "output": "E:\\AndroidProject\\chapter07\\app\\build\\intermediates\\cxx\\RelWithDebInfo\\2c1hk287\\obj\\x86\\libchapter07.so",
+      "runtimeFiles": []
+    }
+  }
+}

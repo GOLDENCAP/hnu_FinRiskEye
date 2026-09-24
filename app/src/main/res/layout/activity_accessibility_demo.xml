@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="无障碍服务演示"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- 服务状态卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_service_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="○ 无障碍服务状态：未开启"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btn_enable_service"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="开启无障碍服务"
+                android:backgroundTint="#4CAF50"/>
+        </LinearLayout>
+
+        <!-- 模拟点击操作卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="模拟点击操作"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/tv_click_info"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="等待操作..."
+                android:gravity="center"
+                android:background="#e0e0e0"
+                android:padding="8dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btn_click_200"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="点击坐标 (200, 200)"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btn_click_500"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="点击坐标 (500, 800)"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btn_long_press"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="长按坐标 (300, 500)"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btn_swipe"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="向上滑动"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <!-- 记录管理卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="记录管理"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/tv_record_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📊 总记录数：0"
+                android:textSize="14sp"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btn_view_records"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="查看所有记录"
+                android:layout_marginBottom="8dp"
+                style="?android:attr/borderlessButtonStyle"/>
+
+            <Button
+                android:id="@+id/btn_clear_records"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="清空所有记录"
+                android:backgroundTint="#F44336"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <!-- 说明卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📖 使用说明"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. 首次使用请点击「开启无障碍服务」\n2. 在设置中找到「Chapter07」并开启\n3. 返回后即可使用模拟点击功能\n4. 所有点击都会被记录到数据库"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,19 @@
+                        -HE:\AndroidProject\chapter07\app\src\main\cpp
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=24
+-DANDROID_PLATFORM=android-24
+-DANDROID_ABI=arm64-v8a
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DANDROID_NDK=D:\androidsdk\ndk\28.2.13676358
+-DCMAKE_ANDROID_NDK=D:\androidsdk\ndk\28.2.13676358
+-DCMAKE_TOOLCHAIN_FILE=D:\androidsdk\ndk\28.2.13676358\build\cmake\android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=D:\androidsdk\cmake\3.22.1\bin\ninja.exe
+-DCMAKE_CXX_FLAGS=-std=c++14
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=E:\AndroidProject\chapter07\app\build\intermediates\cxx\Debug\11725v3w\obj\arm64-v8a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=E:\AndroidProject\chapter07\app\build\intermediates\cxx\Debug\11725v3w\obj\arm64-v8a
+-DCMAKE_BUILD_TYPE=Debug
+-BE:\AndroidProject\chapter07\app\.cxx\Debug\11725v3w\arm64-v8a
+-GNinja
+                        Build command args: []
+                        Version: 2

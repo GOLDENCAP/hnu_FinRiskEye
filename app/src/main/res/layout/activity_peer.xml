@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".peer">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 远程视频（全屏背景）- OpenGL Shader 渲染 -->
+        <com.example.chapter07.YuvGLSurfaceView
+            android:id="@+id/RemoteGLSurfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <!-- 远程视频（全屏背景）- WebRTC 默认渲染 -->
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/RemoteSurfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <!-- 本地视频（小窗口，悬浮在右上角） -->
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/LocalSurfaceView"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
+            android:elevation="2dp" />
+
+        <!-- 亮度/饱和度/暖色调控制面板 -->
+        <LinearLayout
+            android:id="@+id/ControlPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="280dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="#A0000000"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:visibility="gone">
+
+            <!-- 饱和度 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="饱和度"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+                <SeekBar
+                    android:id="@+id/SaturationSeekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="130"
+                    android:progress="110" />
+                <TextView
+                    android:id="@+id/SaturationValue"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:text="1.10"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- 暖色调 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="暖色调"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+                <SeekBar
+                    android:id="@+id/WarmthSeekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="30"
+                    android:progress="15" />
+                <TextView
+                    android:id="@+id/WarmthValue"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:text="0.15"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- mymymy 本地暖色调控制面板 -->
+        <LinearLayout
+            android:id="@+id/LocalWarmControlPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="160dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="#A0000000"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:visibility="gone">
+
+            <!-- 暖色调强度 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="暖色强度"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+                <SeekBar
+                    android:id="@+id/LocalWarmthSeekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="50"
+                    android:progress="30" />
+                <TextView
+                    android:id="@+id/LocalWarmthValue"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:text="0.30"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- 饱和度 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="饱和度"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+                <SeekBar
+                    android:id="@+id/LocalSaturationSeekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="150"
+                    android:progress="110" />
+                <TextView
+                    android:id="@+id/LocalSaturationValue"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:text="1.10"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 日志显示 -->
+        <TextView
+            android:id="@+id/LogcatView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#80000000"
+            android:padding="8dp"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:layout_gravity="bottom|start"
+            android:maxLines="10" />
+
+        <!-- 按钮容器 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="80dp"
+            android:orientation="horizontal">
+
+            <!-- Shader 渲染开关按钮 -->
+            <Button
+                android:id="@+id/ShaderToggleBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开启 Shader 暖色渲染"
+                android:textAllCaps="false" />
+
+            <!-- 录制本地视频按钮 -->
+            <Button
+                android:id="@+id/RecordToggleBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="录制本地视频"
+                android:textAllCaps="false" />
+
+            <!-- mymymy 录制远端视频按钮 -->
+            <Button
+                android:id="@+id/RecordRemoteToggleBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="录制远端视频"
+                android:textAllCaps="false" />
+
+            <!-- mymymy 本地暖色调特效按钮 -->
+            <Button
+                android:id="@+id/LocalWarmEffectToggleBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="本地暖色调特效"
+                android:textAllCaps="false" />
+
+            <!-- mymymy 录制远端音频按钮 -->
+            <Button
+                android:id="@+id/RecordRemoteAudioToggleBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="录制远端音频"
+                android:textAllCaps="false" />
+
+            <!-- mymymy 录制本端音频按钮 -->
+            <Button
+                android:id="@+id/RecordLocalAudioToggleBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="录制本端音频"
+                android:textAllCaps="false" />
+
+            <!-- 金融诈骗检测按钮 -->
+            <Button
+                android:id="@+id/FraudDetectionBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="金融诈骗检测"
+                android:textAllCaps="false" />
+
+            <!-- 金融诈骗视频检测按钮 -->
+            <Button
+                android:id="@+id/FraudVideoDetectionBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="视频诈骗检测"
+                android:textAllCaps="false" />
+
+            <!-- 音频转文字 + 诈骗检测按钮 -->
+            <Button
+                android:id="@+id/FraudAudioTranscriptionBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="音频转文字诈骗检测"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
