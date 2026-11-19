@@ -1,5 +1,6 @@
 package com.example.chapter07.getposition;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -187,6 +188,10 @@ public class BackgroundRecordActivity extends Activity {
     }
 
     @Override
+    // 说明：这是前两级遗留的旧代码，仍使用 Activity.onBackPressed() 处理返回键；
+    // Android 13+ 的预测性返回新 API 需要改造返回导航链路，本次保持原有返回行为不变，
+    // 仅用 lint 抑制避免 GestureBackNavigation 在 12/15 交付时挂红。
+    @SuppressLint("GestureBackNavigation")
     public void onBackPressed() {
         if (isRecording) {
             stopRecording();

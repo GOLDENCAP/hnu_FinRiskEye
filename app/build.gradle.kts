@@ -6,12 +6,22 @@ android {
     namespace = "com.example.chapter07"
     compileSdk = 36
 
+    sourceSets {
+        getByName("main") {
+            java.srcDir(rootProject.file("thirdlevel/android/java"))
+            res.srcDir(rootProject.file("thirdlevel/android/res"))
+        }
+        getByName("test") {
+            java.srcDir(rootProject.file("thirdlevel/android/test/java"))
+        }
+    }
+
     defaultConfig {
         applicationId = "com.example.chapter07"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 8
+        versionName = "1.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -32,6 +42,12 @@ android {
             ?.takeIf { it.isNotBlank() && !it.startsWith("__") }
             ?: "PLACEHOLDER_SET_OPENAI_API_KEY_IN_GRADLE_PROPERTIES"
         buildConfigField("String", "OPENAI_API_KEY", "\"" + openAiKey + "\"")
+
+        // mymymy: AI_API_KEY 优先（当前用国内服务商）；未配置时回退到 OPENAI_API_KEY
+        val aiKey: String = (project.findProperty("AI_API_KEY") as String?)
+            ?.takeIf { it.isNotBlank() && !it.startsWith("__") }
+            ?: openAiKey
+        buildConfigField("String", "AI_API_KEY", "\"" + aiKey + "\"")
     }
 
     externalNativeBuild {
@@ -86,4 +102,7 @@ dependencies {
     implementation("io.socket:socket.io-client:2.1.0")
 
     implementation("androidx.cardview:cardview:1.0.0")
+
+    // 第三级屏幕文字识别：捆绑中文模型，不依赖联网下载或外部 OCR 密钥。
+    implementation("com.google.mlkit:text-recognition-chinese:16.0.1")
 }

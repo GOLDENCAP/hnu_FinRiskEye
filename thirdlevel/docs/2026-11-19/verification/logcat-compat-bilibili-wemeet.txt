@@ -1,0 +1,158 @@
+﻿11-19 12:36:23.428  2007  2346 D SurfaceFlinger: Creating virtual display: ThirdLevelRiskCapture
+11-19 12:36:23.428  2408  4612 I DisplayDeviceRepository: Display device added: DisplayDeviceInfo{"ThirdLevelRiskCapture": uniqueId="virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10", 1200 x 2670, modeId 17, renderFrameRate 60.0, hasArrSupport false, frameRateCategoryRate null, supportedRefreshRates [], defaultModeId 17, userPreferredModeId -1, supportedModes [{id=17, width=1200, height=2670, fps=60.0, vsync=60.0, synthetic=false, alternativeRefreshRates=[], supportedHdrTypes=[]}], colorMode 0, supportedColorModes [0], hdrCapabilities null, isForceSdr false, allmSupported false, gameContentTypeSupported false, density 480, 480.0 x 480.0 dpi, appVsyncOff 0, presDeadline 16666666, touch NONE, rotation 0, type VIRTUAL, deviceProductInfo null, state ON, committedState UNKNOWN, owner com.example.chapter07 (uid 10281), frameRateOverride , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.0, brightnessDim -1.0, hdrSdrRatio NaN, FLAG_PRIVATE, FLAG_PRESENTATION, installOrientation 0, displayShape DisplayShape{ spec=-2010903805 displayWidth=1200 displayHeight=2670 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}}
+11-19 12:36:23.456  2408  4612 I DisplayDevice: [12] Layerstack set to 12 for virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10
+11-19 12:36:23.456  2408  4612 I DisplayDevice: [12] Projection set to orientation : 0 layerStackRect: Rect(0, 0 - 1200, 2670) displayRect: Rect(0, 0 - 1200, 2670) for virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10
+11-19 12:36:23.473  2007  2007 I SurfaceFlinger: SF-DisplayRect: setDisplayLayerStack, display[name:ThirdLevelRiskCapture,id:virtual] displayLayerStack=12
+11-19 12:36:23.473  2007  2007 I SurfaceFlinger: SF-DisplayRect: setDisplayProjection display[name:ThirdLevelRiskCapture,id:virtual] displayOrientation=0, layerStackSpaceRect=Rect(0, 0, 1200, 2670), orientedDisplaySpaceRect=Rect(0, 0, 1200, 2670)
+11-19 12:36:23.473  2007  2007 I SurfaceFlinger: SF-DisplayRect: processDisplayAdded, display[name:ThirdLevelRiskCapture,id:virtual] displayLayerStack=12
+11-19 12:36:23.475  2007  2007 D MI-SF   : getP3ProjectionScreenSupportStatus: map is empty, ThirdLevelRiskCapture status return 0
+11-19 12:36:23.475  2007  2007 D MI-SF   : setupNewDisplayDeviceInternalcheck: displayName:ThirdLevelRiskCapture, hasWideColorGamut=false, isScreenrecord=false
+11-19 12:36:23.476  2007  2007 I CompositionEngine: SF-DisplayRect: setProjection display[ThirdLevelRiskCapture], layerStackSpace={bounds=Rect(0, 0, 1200, 2670), content=Rect(0, 0, 1200, 2670)}, displaySpace={bounds=Rect(0, 0, 1200, 2670), content=Rect(0, 0, 1200, 2670)}
+11-19 12:36:23.476  2007  2007 I CompositionEngine: SF-DisplayRect: setProjection display[ThirdLevelRiskCapture], layerStackSpace={bounds=Rect(0, 0, 1200, 2670), content=Rect(0, 0, 1200, 2670)}, displaySpace={bounds=Rect(0, 0, 1200, 2670), content=Rect(0, 0, 1200, 2670)}
+11-19 12:36:23.476  2408  2486 I DisplayPowerController[12]: BrightnessEvent: brt=8.54597E-4 (5.0%), nits= -1.0, lux=-1.0, reason=manual, strat=InvalidBrightnessStrategy, state=ON, stateReason=KEY, policy=BRIGHT, flags=, initBrt=NaN, rcmdBrt=NaN, preBrt=NaN, preLux=0.0, wasShortTermModelActive=false, autoBrightness=true (default), unclampedBrt=0.0, hbmMax=0.95238674, hbmMode=off, thrmMax=1.0, rbcStrength=-1, powerFactor=1.0, physDisp=ThirdLevelRiskCapture(virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10), logicalId=12, slowChange=false, rampSpeed=1.0
+11-19 12:36:23.478  2408  2439 W DisplayContentStubImpl:  displayMetricsChanged=false physicalDisplayChanged=false displayId=12 newUniqueId=virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10 currentUnique=virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10
+11-19 12:36:23.732  8642  8642 I ThirdLevelAudio: application playback capture started
+11-19 12:36:23.732  8642  8642 I ThirdLevelRisk: screen risk session started, 1200x2670
+11-19 12:36:23.763  8642  8642 I ThirdLevelRisk: overlay shown, width=900px, compactPhone=true, notTouchable=true
+11-19 12:36:23.776  8642  8642 I ThirdLevelRisk: overlay update: 第三级检测已启动 | 每2秒检查一次屏幕变化
+11-19 12:36:23.777  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：等待分析 语音：等待采集
+11-19 12:36:26.082  8642  8642 D ThirdLevelRisk: OCR completed, textLength=22
+11-19 12:36:26.083  8642  8642 D ThirdLevelRisk: sending risk request, requestId=7d86741f-0ea8-49d4-a226-abbb9dd9e895
+11-19 12:36:26.099  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：等待分析 语音：等待采集
+11-19 12:36:28.404  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=2316
+11-19 12:36:28.413  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：等待采集 最近分析：刚刚，耗时 2.3s｜本次会话：分析 1 次，风险 0 次
+11-19 12:36:28.879  8642 20730 D ThirdLevelRisk: single limited frame ignored by hysteresis: BLACK
+11-19 12:36:30.933  8642 20730 W ThirdLevelRisk: frame quality limited: BLACK
+11-19 12:36:30.935  8642  8642 I ThirdLevelRisk: overlay update: 检测受限 | 画面：检测受限 语音：等待采集 画面：黑屏或受保护画面（可能被目标应用限制） 最近分析：2s 前，耗时 2.3s｜本次会话：分析 1 次，风险 0 次
+11-19 12:36:33.752  8642  8642 I ThirdLevelRisk: overlay update: 检测受限 | 画面：检测受限 语音：未捕获到应用播放音频 画面：黑屏或受保护画面（可能被目标应用限制） 最近分析：5s 前，耗时 2.3s｜本次会话：分析 1 次，风险 0 次
+11-19 12:36:34.653  2408  5874 I SecurityManagerService: getUIAgentDisplayId virtual owner pkg=com.example.chapter07, name:ThirdLevelRiskCapture, display uid:10281, targetUid:10332, current userId=0, display id=12
+11-19 12:36:35.013  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：等待分析 语音：未捕获到应用播放音频
+11-19 12:36:35.014  8642 20730 I ThirdLevelRisk: frame quality recovered, continue analysis
+11-19 12:36:35.437  8642  8642 D ThirdLevelRisk: OCR completed, textLength=29
+11-19 12:36:35.438  8642  8642 D ThirdLevelRisk: sending risk request, requestId=1cf056b1-d6bd-4fe5-a590-bbfa70eeb2f9
+11-19 12:36:35.467  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：等待分析 语音：未捕获到应用播放音频
+11-19 12:36:36.710  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1268
+11-19 12:36:36.722  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.3s｜本次会话：分析 2 次，风险 0 次
+11-19 12:36:37.200  8642  8642 D ThirdLevelRisk: OCR completed, textLength=34
+11-19 12:36:37.200  8642  8642 D ThirdLevelRisk: sending risk request, requestId=3c5ef998-3668-4c34-91db-482d0f5467f3
+11-19 12:36:37.206  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:36:38.916  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1712
+11-19 12:36:38.925  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.7s｜本次会话：分析 3 次，风险 0 次
+11-19 12:36:39.317  8642  8642 D ThirdLevelRisk: OCR completed, textLength=34
+11-19 12:36:41.346  8642  8642 D ThirdLevelRisk: OCR completed, textLength=34
+11-19 12:36:42.575  2408  5281 I SecurityManagerService: getUIAgentDisplayId virtual owner pkg=com.example.chapter07, name:ThirdLevelRiskCapture, display uid:10281, targetUid:10332, current userId=0, display id=12
+11-19 12:36:43.483  8642  8642 D ThirdLevelRisk: OCR completed, textLength=35
+11-19 12:36:43.485  8642  8642 D ThirdLevelRisk: sending risk request, requestId=2c8d6347-bcca-46d4-a3c5-b5ff3d962448
+11-19 12:36:43.510  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:36:49.894  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=6399
+11-19 12:36:49.901  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 6.4s｜本次会话：分析 4 次，风险 0 次
+11-19 12:36:50.560  8642  8642 D ThirdLevelRisk: OCR completed, textLength=35
+11-19 12:36:56.645  8642  8642 D ThirdLevelRisk: OCR completed, textLength=35
+11-19 12:36:58.704  8642  8642 D ThirdLevelRisk: OCR completed, textLength=35
+11-19 12:37:00.767  8642  8642 D ThirdLevelRisk: OCR completed, textLength=35
+11-19 12:37:02.798  8642  8642 D ThirdLevelRisk: OCR completed, textLength=35
+11-19 12:37:04.263  2408  5453 I SecurityManagerService: getUIAgentDisplayId virtual owner pkg=com.example.chapter07, name:ThirdLevelRiskCapture, display uid:10281, targetUid:10332, current userId=0, display id=12
+11-19 12:37:05.189  8642  8642 D ThirdLevelRisk: OCR completed, textLength=35
+11-19 12:37:07.164  8642  8642 D ThirdLevelRisk: OCR completed, textLength=52
+11-19 12:37:07.169  8642  8642 D ThirdLevelRisk: sending risk request, requestId=344bfdc8-efeb-4dd2-8f05-e37c4d386282
+11-19 12:37:07.179  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:08.499  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1322
+11-19 12:37:08.507  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.3s｜本次会话：分析 5 次，风险 0 次
+11-19 12:37:09.259  8642  8642 D ThirdLevelRisk: OCR completed, textLength=73
+11-19 12:37:09.260  8642  8642 D ThirdLevelRisk: sending risk request, requestId=23c8d6f6-193d-41b6-a350-0658d4b07bdf
+11-19 12:37:09.266  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:10.141  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=878
+11-19 12:37:10.146  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 878ms｜本次会话：分析 6 次，风险 0 次
+11-19 12:37:11.330  8642  8642 D ThirdLevelRisk: OCR completed, textLength=78
+11-19 12:37:11.332  8642  8642 D ThirdLevelRisk: sending risk request, requestId=76009ea2-3325-489c-a1bc-be7e92d56673
+11-19 12:37:11.356  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:12.666  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1328
+11-19 12:37:12.671  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.3s｜本次会话：分析 7 次，风险 0 次
+11-19 12:37:13.393  8642  8642 D ThirdLevelRisk: OCR completed, textLength=90
+11-19 12:37:13.393  8642  8642 D ThirdLevelRisk: sending risk request, requestId=d1502785-03b1-4fd7-9900-262833dfb274
+11-19 12:37:13.410  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:15.328  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1925
+11-19 12:37:15.347  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.9s｜本次会话：分析 8 次，风险 0 次
+11-19 12:37:15.949  8642  8642 D ThirdLevelRisk: OCR completed, textLength=75
+11-19 12:37:15.952  8642  8642 D ThirdLevelRisk: sending risk request, requestId=e43a8246-85ae-4a14-b0d8-6718dd6649fe
+11-19 12:37:15.961  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:18.346  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=2389
+11-19 12:37:18.358  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 2.4s｜本次会话：分析 9 次，风险 0 次
+11-19 12:37:19.162  8642  8642 D ThirdLevelRisk: OCR completed, textLength=74
+11-19 12:37:19.164  8642  8642 D ThirdLevelRisk: sending risk request, requestId=1d241fec-136c-4abb-a5a7-54a959af2fdc
+11-19 12:37:19.193  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:20.183  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1008
+11-19 12:37:20.206  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.0s｜本次会话：分析 10 次，风险 0 次
+11-19 12:37:21.149  8642  8642 D ThirdLevelRisk: OCR completed, textLength=74
+11-19 12:37:21.150  8642  8642 D ThirdLevelRisk: sending risk request, requestId=c869cd2f-2235-4ee8-96b3-c63f5f4c5313
+11-19 12:37:21.158  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:22.335  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1181
+11-19 12:37:22.345  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.2s｜本次会话：分析 11 次，风险 0 次
+11-19 12:37:23.224  8642  8642 D ThirdLevelRisk: OCR completed, textLength=59
+11-19 12:37:23.226  8642  8642 D ThirdLevelRisk: sending risk request, requestId=d4cfc787-946b-4d9d-85db-8d2c68c37423
+11-19 12:37:23.264  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:24.313  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1074
+11-19 12:37:24.332  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.1s｜本次会话：分析 12 次，风险 0 次
+11-19 12:37:25.268  8642  8642 D ThirdLevelRisk: OCR completed, textLength=58
+11-19 12:37:25.269  8642  8642 D ThirdLevelRisk: sending risk request, requestId=e25ab20e-5703-47ff-8076-2b9fffdcd942
+11-19 12:37:25.276  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:26.738  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1465
+11-19 12:37:26.746  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.5s｜本次会话：分析 13 次，风险 0 次
+11-19 12:37:27.365  8642  8642 D ThirdLevelRisk: OCR completed, textLength=57
+11-19 12:37:27.370  8642  8642 D ThirdLevelRisk: sending risk request, requestId=3db8aae6-b618-4747-8bc3-2350322005b4
+11-19 12:37:27.382  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:28.104  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=726
+11-19 12:37:28.124  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 726ms｜本次会话：分析 14 次，风险 0 次
+11-19 12:37:29.426  8642  8642 D ThirdLevelRisk: OCR completed, textLength=58
+11-19 12:37:29.432  8642  8642 D ThirdLevelRisk: sending risk request, requestId=3f976211-8ddc-478a-b407-2b6202c31731
+11-19 12:37:29.449  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:30.825  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1383
+11-19 12:37:30.833  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.4s｜本次会话：分析 15 次，风险 0 次
+11-19 12:37:31.500  8642  8642 D ThirdLevelRisk: OCR completed, textLength=67
+11-19 12:37:31.505  8642  8642 D ThirdLevelRisk: sending risk request, requestId=62a64d20-5823-4471-b1fe-b800f8596a97
+11-19 12:37:31.524  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:32.579  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1066
+11-19 12:37:32.600  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.1s｜本次会话：分析 16 次，风险 0 次
+11-19 12:37:33.587  8642  8642 D ThirdLevelRisk: OCR completed, textLength=67
+11-19 12:37:33.589  8642  8642 D ThirdLevelRisk: sending risk request, requestId=db4e907f-5cf9-401c-b20a-190ef170ac29
+11-19 12:37:33.607  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:34.728  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1129
+11-19 12:37:34.749  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.1s｜本次会话：分析 17 次，风险 0 次
+11-19 12:37:35.639  8642  8642 D ThirdLevelRisk: OCR completed, textLength=67
+11-19 12:37:37.779  8642  8642 D ThirdLevelRisk: OCR completed, textLength=65
+11-19 12:37:37.780  8642  8642 D ThirdLevelRisk: sending risk request, requestId=c9255da5-cb55-44d5-8fe0-0522fb83f8b6
+11-19 12:37:37.788  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:38.969  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1183
+11-19 12:37:38.985  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.2s｜本次会话：分析 18 次，风险 0 次
+11-19 12:37:39.883  8642  8642 D ThirdLevelRisk: OCR completed, textLength=65
+11-19 12:37:41.853  8642  8642 D ThirdLevelRisk: OCR completed, textLength=65
+11-19 12:37:43.850  8642  8642 D ThirdLevelRisk: OCR completed, textLength=65
+11-19 12:37:45.882  8642  8642 D ThirdLevelRisk: OCR completed, textLength=65
+11-19 12:37:47.970  8642  8642 D ThirdLevelRisk: OCR completed, textLength=68
+11-19 12:37:47.971  8642  8642 D ThirdLevelRisk: sending risk request, requestId=7a574d04-50a8-46da-b5dd-58eff3d16b4d
+11-19 12:37:47.981  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:49.317  2408  4300 I SecurityManagerService: getUIAgentDisplayId virtual owner pkg=com.example.chapter07, name:ThirdLevelRiskCapture, display uid:10281, targetUid:1000, current userId=0, display id=12
+11-19 12:37:49.517  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=1541
+11-19 12:37:49.531  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 1.5s｜本次会话：分析 19 次，风险 0 次
+11-19 12:37:50.411  8642  8642 D ThirdLevelRisk: OCR completed, textLength=55
+11-19 12:37:50.413  8642  8642 D ThirdLevelRisk: sending risk request, requestId=b61fd81e-f71f-42f1-85e2-fe084f549a64
+11-19 12:37:50.425  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:54.041  8642  8642 I ThirdLevelRisk: screen risk result: none, latencyMs=3622
+11-19 12:37:54.048  8642  8642 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 语音：未捕获到应用播放音频 最近分析：刚刚，耗时 3.6s｜本次会话：分析 20 次，风险 0 次
+11-19 12:37:54.541  8642  8642 D ThirdLevelRisk: OCR completed, textLength=80
+11-19 12:37:54.544  8642  8642 D ThirdLevelRisk: sending risk request, requestId=62853eb0-72ed-4deb-9778-33c3835b3a47
+11-19 12:37:54.551  8642  8642 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未捕获到应用播放音频
+11-19 12:37:56.507  2408  2408 I VirtualDisplayAdapter: Virtual display device released because media projection stopped: ThirdLevelRiskCapture
+11-19 12:37:56.507  2408  2408 D VirtualDisplayAdapter: Virtual Display: stopping device ThirdLevelRiskCapture
+11-19 12:37:56.507  2408  2441 I DisplayDeviceRepository: Display device changed state: "ThirdLevelRiskCapture", OFF
+11-19 12:37:56.508  2408  2439 W DisplayContentStubImpl:  displayMetricsChanged=false physicalDisplayChanged=false displayId=12 newUniqueId=virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10 currentUnique=virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10
+11-19 12:37:56.510  2408  2439 I DisplayDevice: [12] Layerstack set to -1 for virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10
+11-19 12:37:56.524  2007  2007 I SurfaceFlinger: SF-DisplayRect: setDisplayLayerStack, display[name:ThirdLevelRiskCapture,id:virtual] displayLayerStack=-1
+11-19 12:37:56.525  2007  2007 D BufferQueueConsumer: [VDS: ThirdLevelRiskCapture](id:7d70000000b,api:1,p:2007,c:2007) disconnect: caller 2007
+11-19 12:37:56.525  2007  2007 D BufferQueueProducer: [VDS: ThirdLevelRiskCapture](id:7d70000000b,api:1,p:2007,c:2007) disconnect: api 1 (caller=2007)
+11-19 12:37:56.525  2007  2007 D SurfaceFlinger: Not adding dormant virtual display with token 0xb40000725ed36290: ThirdLevelRiskCapture
+11-19 12:37:57.682  2007  2114 D SurfaceFlinger: Destroying virtual display: ThirdLevelRiskCapture
+11-19 12:37:57.683  2007  2114 D MI-SF   : getP3ProjectionScreenSupportStatus: map is empty, ThirdLevelRiskCapture status return 0
+11-19 12:37:57.683  2007  2114 D MI-SF   : destroyDisplay: displayName:ThirdLevelRiskCapture
+11-19 12:37:57.683  2408  4300 I DisplayDeviceRepository: Display device removed: DisplayDeviceInfo{"ThirdLevelRiskCapture": uniqueId="virtual:com.example.chapter07,10281,ThirdLevelRiskCapture,10", 1200 x 2670, modeId 17, renderFrameRate 60.0, hasArrSupport false, frameRateCategoryRate null, supportedRefreshRates [], defaultModeId 17, userPreferredModeId -1, supportedModes [{id=17, width=1200, height=2670, fps=60.0, vsync=60.0, synthetic=false, alternativeRefreshRates=[], supportedHdrTypes=[]}], colorMode 0, supportedColorModes [0], hdrCapabilities null, isForceSdr false, allmSupported false, gameContentTypeSupported false, density 480, 480.0 x 480.0 dpi, appVsyncOff 0, presDeadline 16666666, touch NONE, rotation 0, type VIRTUAL, deviceProductInfo null, state OFF, committedState UNKNOWN, owner com.example.chapter07 (uid 10281), frameRateOverride , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.0, brightnessDim -1.0, hdrSdrRatio NaN, FLAG_PRIVATE, FLAG_PRESENTATION, installOrientation 0, displayShape DisplayShape{ spec=-2010903805 displayWidth=1200 displayHeight=2670 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}}
+11-19 12:37:57.696  8642  8642 I ThirdLevelRisk: screen risk session stopped: 屏幕共享授权已撤销，请重新授权后开启检测

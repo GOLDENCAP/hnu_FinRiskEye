@@ -1,0 +1,29 @@
+# Local Android SDK/JDK configuration
+local.properties
+
+# Local build configuration may contain provider API keys
+gradle.properties
+
+# Build and IDE output
+.gradle/
+build/
+app/build/
+app/.cxx/
+app/release/
+**/build/
+.idea/
+*.iml
+*.log
+*.apk
+*.aab
+
+# Third-level runtime configuration and generated output
+thirdlevel/server/.env
+thirdlevel/server/node_modules/
+thirdlevel/server/coverage/
+thirdlevel/**/*.apk
+thirdlevel/**/*.aab
+
+# Local test captures and transcripts
+thirdlevel/runtime/
+thirdlevel/test-output/

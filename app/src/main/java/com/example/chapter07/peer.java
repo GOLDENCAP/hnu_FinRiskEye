@@ -669,9 +669,9 @@ public class peer extends AppCompatActivity {
 
     // mymymy 读取 OpenAI API Key（gradle.properties → BuildConfig），占位符时返回原值并提示用户
     private String resolveOpenAiApiKey() {
-        String key = BuildConfig.OPENAI_API_KEY;
+        String key = BuildConfig.AI_API_KEY;
         if (key == null || key.isEmpty() || key.startsWith("PLACEHOLDER_") || key.startsWith("YOUR_")) {
-            Log.w(TAG, "OpenAI API Key 未配置（BuildConfig.OPENAI_API_KEY=" + key + "），请在 gradle.properties 设置 OPENAI_API_KEY=sk-xxx");
+            Log.w(TAG, "AI API Key 未配置（BuildConfig.AI_API_KEY），请在 gradle.properties 设置 AI_API_KEY=sk-xxx");
             Toast.makeText(this, "⚠️ 未配置 OPENAI_API_KEY，请在 gradle.properties 设置后重新编译", Toast.LENGTH_LONG).show();
         }
         return key;

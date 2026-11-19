@@ -1,0 +1,13 @@
+# Docker build context == this directory (thirdlevel/server).
+# Keep secrets and local artifacts out of the image.
+.env
+.env.*
+!.env.example
+node_modules
+npm-debug.log*
+*.log
+coverage
+test
+start-local.ps1
+__pycache__
+.DS_Store

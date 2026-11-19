@@ -1,0 +1,23 @@
+﻿FinRiskEye 第三级 构建记录 (build summary)
+日期: 2026-11-13 (Asia/Shanghai)
+
+[最终工程 APK - 交付]
+path   : C:\Users\79047\Documents\deepseek-harness\default-workspace\finriskeye\ARTIFACTS\app-debug-thirdlevel-2026-11-13.apk
+size   : 113458173 bytes (108.2 MB)
+sha256 : 7E97049236800BCEE95F7677E163C54E0961FB6C9CE56FE89652829C59085DC2
+gradle : BUILD SUCCESSFUL in 1m 6s (41 tasks)
+wall   : 1.12 min (build-final.log)
+built  : 2026-11-13 20:42:45
+verify : aapt2 dump badging OK; apksigner v2 OK; classes6.dex contains FrameQualityDetector + ScreenRiskService
+
+[基线工程 APK - 对照证据]
+path   : C:\Users\79047\Documents\deepseek-harness\default-workspace\finriskeye\build-baseline\app\build\outputs\apk\debug\app-debug.apk
+size   : 113458173 bytes (108.2 MB)
+sha256 : 1D9E4B45F26828B3FE7582222AB8DBADF1E3FECDE8BD7013C37D6509A4CC8A12
+gradle : BUILD SUCCESSFUL in 3m 16s (41 tasks)
+wall   : 3.29 min (build.log)
+built  : 2026-11-13 20:39:55
+
+[对照] 交接包 APK (同学B机器): 114575684 bytes, sha256 E5BCFAC65A2CCAD4ECB064E39DC96F853C5D70948F82255644472410BA8C53BC
+
+[环境] JDK Temurin 21.0.13+9; SDK platform-tools 37.0.1 / platforms;android-36 / build-tools 36.0.0 / cmake 3.22.1 / ndk 28.2.13676358(r28c); Gradle 9.3.1; AGP 9.1.0; 详见 env-versions.txt

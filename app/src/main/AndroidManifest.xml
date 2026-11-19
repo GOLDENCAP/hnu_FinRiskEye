@@ -22,6 +22,7 @@
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <application
+        android:name=".FinRiskEyeApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -65,8 +66,26 @@
             android:name=".peer"
             android:exported="false" />
         <activity
+            android:name=".thirdlevel.ThirdLevelActivity"
+            android:exported="false"
+            android:label="第三级：跨应用风险检测"
+            android:theme="@style/Theme.Chapter07.NoActionBar" />
+        <!-- Lead 已授权：仅注册第三级演示/自测画面页（12/15 演示与模拟器联调入口）。 -->
+        <activity
+            android:name=".thirdlevel.ThirdLevelDemoActivity"
+            android:exported="false"
+            android:label="@string/third_level_demo_title"
+            android:theme="@style/Theme.Chapter07.NoActionBar" />
+        <!-- 受保护画面（FLAG_SECURE）自测页：验证“黑屏/受保护画面→检测受限”，页面不可被截屏采集。 -->
+        <activity
+            android:name=".thirdlevel.ThirdLevelProtectedDemoActivity"
+            android:exported="false"
+            android:label="@string/third_level_protected_title"
+            android:theme="@style/Theme.Chapter07.NoActionBar" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Chapter07.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -108,6 +127,11 @@
 
         <service
             android:name=".get_click_and_picture.MediaProjectionForegroundService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+        <service
+            android:name=".thirdlevel.ScreenRiskService"
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="mediaProjection" />
