@@ -10,6 +10,15 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="FinRiskEye 风险检测"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/serverEditText"
             android:layout_width="match_parent"
@@ -30,6 +39,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Join Room" />
+
+        <Button
+            android:id="@+id/thirdLevelEntryBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="第三级：跨应用风险检测" />
 
     </LinearLayout>
 </ScrollView>

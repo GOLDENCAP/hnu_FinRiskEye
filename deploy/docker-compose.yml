@@ -1,0 +1,55 @@
+# 第三级风险服务单机部署示例（Docker Compose v2）
+#
+# 使用前提：thirdlevel/server/.env 已按 .env.example 填好（含真实模型密钥，
+# 该文件被 .gitignore 忽略，不要提交）。
+#
+# 常用命令（在 finriskeye/hnu_FinRiskEye 目录下执行）：
+#   docker compose -f deploy/docker-compose.yml up -d --build   # 构建并后台启动
+#   docker compose -f deploy/docker-compose.yml ps              # 查看健康状态
+#   docker compose -f deploy/docker-compose.yml logs -f         # 查看 JSON 结构化日志
+#   docker compose -f deploy/docker-compose.yml down            # 停止并删除容器
+#
+# 构建上下文说明：context 指向服务源码目录；Dockerfile 集中在 deploy/ 便于管理。
+name: finriskeye-thirdlevel-risk
+
+services:
+  risk-service:
+    build:
+      context: ../thirdlevel/server
+      dockerfile: ../../deploy/Dockerfile
+    image: hnufinriskeye/thirdlevel-risk:1.1.0
+    container_name: thirdlevel-risk-service
+    # 所有运行配置（含模型密钥）从服务端 .env 注入，镜像内不保存密钥。
+    env_file:
+      - ../thirdlevel/server/.env
+    environment:
+      # 容器内固定端口；外部端口见 ports。
+      PORT: "3100"
+      HOST: "0.0.0.0"
+    ports:
+      # 默认 3100:3100，便于 Android 模拟器 / 局域网真机演示。
+      # 若只允许本机 nginx 反代访问，改成 "127.0.0.1:3100:3100"。
+      - "3100:3100"
+    restart: unless-stopped
+    init: true
+    # 应用不写磁盘，只读根文件系统 + 临时目录，降低被写入后门的影响面。
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3100/health').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

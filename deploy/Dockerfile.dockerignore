@@ -1,0 +1,14 @@
+# BuildKit 会优先使用与 Dockerfile 同名的 <Dockerfile>.dockerignore。
+# 本文件用于 `docker build -f deploy/Dockerfile thirdlevel/server` 场景，
+# 路径相对构建上下文（thirdlevel/server）。普通 `docker build thirdlevel/server`
+# 场景同样有 thirdlevel/server/.dockerignore 兜底。
+.env
+.env.*
+!.env.example
+node_modules
+npm-debug.log*
+*.log
+coverage
+test
+start-local.ps1
+.DS_Store

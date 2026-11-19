@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  第三级“受保护画面（自测）”页：本页设置 FLAG_SECURE，MediaProjection 采集只能得到黑屏，
+  用于真机验证检测端会显示「检测受限 / 黑屏或受保护画面」而不是「无风险」。
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/thirdLevelProtectedDemoRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111111"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/thirdLevelProtectedDemoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="32dp"
+        android:paddingBottom="8dp"
+        android:text="@string/third_level_protected_title"
+        android:textColor="#FFD54F"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/thirdLevelProtectedDemoDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineSpacingExtra="6dp"
+        android:paddingStart="24dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="16dp"
+        android:text="@string/third_level_protected_desc"
+        android:textColor="#EEEEEE"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/thirdLevelProtectedDemoBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/third_level_protected_back" />
+</LinearLayout>

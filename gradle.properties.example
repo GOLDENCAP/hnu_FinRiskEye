@@ -1,0 +1,21 @@
+# Project-wide Gradle settings (sanitized example).
+#
+# Copy to gradle.properties if you need local overrides. gradle.properties is
+# gitignored because it may contain provider API keys on some machines.
+# The committed build does NOT require any model API key.
+
+org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+
+# Keep disabled unless debugging build issues.
+org.gradle.daemon=false
+
+# AndroidX
+android.useAndroidX=true
+android.enableJetifier=true
+
+# Allow a project path containing non-ASCII characters (e.g. Chinese folder names).
+android.overridePathCheck=true
+
+# Optional: legacy buildConfig fields read by earlier levels. Never put real keys here.
+# OPENAI_API_KEY=
+# AI_API_KEY=

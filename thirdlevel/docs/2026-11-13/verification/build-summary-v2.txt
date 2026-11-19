@@ -1,0 +1,108 @@
+# FinRiskEye 第三级 v2 构建汇总（最终交付版，task-8）
+
+生成时间：2026-11-13 22:15 (Asia/Shanghai)
+工程：`finriskeye\hnu_FinRiskEye`
+环境：JDK Temurin 21.0.13+9；Android SDK platform 36 / build-tools 36.0.0 / NDK 28.2 / CMake 3.22.1；Gradle 9.3.1 + AGP 9.1.0；
+沙箱安全 env（`JAVA_HOME/ANDROID_HOME/ANDROID_USER_HOME/GRADLE_USER_HOME/TEMP/JAVA_TOOL_OPTIONS`，由 `tools\build-debug-env.ps1` 统一设置）。
+命令统一形式：`powershell -ExecutionPolicy Bypass -File finriskeye\tools\build-debug-env.ps1 -ProjectPath finriskeye\hnu_FinRiskEye -Task <task> -GradleArgs "--no-daemon --stacktrace"`
+
+> 状态：**最终版（FINAL）**。已包含 android-hardening 的 12/8 补强与 4 处 lint error 修复；lint 修复后已重跑
+> `lintDebug`（0 error）→ `testDebugUnitTest`（40/0）→ `assembleDebug`，本文件与 APK 均为最终产物。
+
+## 0. 源码工作区状态（本次构建对应的改动清单）
+
+构建时 `finriskeye\hnu_FinRiskEye` 工作区已包含以下改动（**源码工作区已包含这些改动，构建未改动任何源码**）：
+
+1. 第三级新增类（thirdlevel/android/java/.../thirdlevel/）：
+   `FrameLimitedGate`（黑屏/空白迟滞）、`AnalysisStatsFormatter`（延迟与会话统计格式化）、
+   `ThirdLevelDemoActivity`（演示/自测页，内置普通/风险画面切换）；
+2. 第三级资源：`thirdlevel/android/res/` 下新增 demo 布局与 `drawable-nodpi` 测试画面资源（ASCII 文件名）；
+3. manifest：`app/src/main/AndroidManifest.xml` 新增 `ThirdLevelDemoActivity` 声明（`exported=false`）；
+4. 应用名：`app/src/main/res/values/strings.xml` 的 `app_name` = **“FinRiskEye 风险检测”**；
+5. ScreenRiskService 等 6 项 12/8 补强改动（OCR 看门狗 / 黑屏迟滞集成 / 悬浮窗权限撤销 / 延迟统计 / 演示入口 / 应用名）；
+6. 3 个前两级遗留 lint 修复文件：`RemoteAudioRecorder.java`（@SuppressLint MissingPermission ×2）、
+   `getposition\BackgroundRecordActivity.java`（@SuppressLint GestureBackNavigation）、
+   `golbal_view_advanced\GlobalTouchAdvancedActivity.java`（startForegroundService 加 API≥26 版本保护）。
+
+说明：工作区中 `thirdlevel\server\*`、`thirdlevel\API.md`、`deploy\` 的改动由 server-hardening teammate 并行负责，
+**不属于 Android 构建输入、不影响本 APK**；本环节未回退/修改它们。
+
+## 1. 单元测试（PASS，最终）
+
+| 项 | 值 |
+| --- | --- |
+| 任务 | `:app:testDebugUnitTest` |
+| 结果 | **BUILD SUCCESSFUL in 24s**（最终重跑；墙钟 0.44 min） |
+| 用例 | **40 tests / 0 failures / 0 errors / 0 skipped** |
+| 明细 | FrameQualityDetectorTest 11 + FrameLimitedGateTest 11 + AnalysisStatsFormatterTest 13 + TextDeduplicatorTest 4 + ExampleUnitTest 1 |
+| 日志 | `unit-test.log` |
+| 结果 XML | `unit-test-results-v2\TEST-*.xml`（5 个）+ `test-report-index.html` |
+
+## 2. Android Lint（PASS，最终）
+
+| 项 | 值 |
+| --- | --- |
+| 任务 | `:app:lintDebug` |
+| 结果 | **BUILD SUCCESSFUL in 1m 27s**（墙钟 1.49 min） |
+| 统计 | **0 errors / 415 warnings** |
+| 日志 | `lint.log` |
+| 汇总 | `lint-summary.md`（修复前 5 errors 的日志/汇总已归档为 `lint-attempt1-5errors.log` / `lint-summary-attempt1-5errors.md`） |
+| 报告 | `hnu_FinRiskEye\app\build\reports\lint-results-debug.{txt,html,xml}` |
+
+## 3. APK 构建（PASS，最终交付）
+
+| 项 | 值 |
+| --- | --- |
+| 任务 | `:app:assembleDebug` |
+| 结果 | **BUILD SUCCESSFUL in 26s**（墙钟 0.48 min，增量） |
+| APK 原始路径 | `finriskeye\hnu_FinRiskEye\app\build\outputs\apk\debug\app-debug.apk` |
+| **交付副本** | **`finriskeye\ARTIFACTS\app-debug-thirdlevel-v2-2026-11-13.apk`** |
+| 大小 | **114,597,846 字节（109.29 MB）** |
+| **SHA-256** | **`6C13AB43750215D7016082008A79F0B770BDFDB88857F3797DE231657FF6D186`** |
+| 构建时间 | 2026-11-13 22:15:08 |
+
+### APK 校验
+
+- `aapt2 dump badging`：`package: com.example.chapter07 versionCode=1 versionName=1.0`，
+  `application-label:'FinRiskEye 风险检测'`，`minSdkVersion:'24'`，`targetSdkVersion:'36'`，
+  `native-code: 'arm64-v8a' 'armeabi-v7a'`，`launchable-activity: com.example.chapter07.MainActivity`
+  （完整输出 `apk-badging-v2.txt`）
+- `aapt2 dump xmltree AndroidManifest.xml`：`ThirdLevelDemoActivity` 已注册且 **`exported=false`**；
+  `ThirdLevelActivity` 同样 `exported=false`（完整输出 `apk-manifest-demo-activity.txt`）
+- dex 内容确认（classes6.dex）：**FrameLimitedGate、AnalysisStatsFormatter、ThirdLevelDemoActivity、FrameQualityDetector** 均在包内
+- `apksigner verify --print-certs`：**APK Signature Scheme v2: true**，1 个 signer，
+  `C=US, O=Android, CN=Android Debug`（`apk-signature-v2.txt`）
+
+## 4. 耗时汇总（最终重跑）
+
+| 阶段 | Gradle | 墙钟 |
+| --- | --- | --- |
+| lintDebug | 1m 27s | 1.49 min |
+| testDebugUnitTest | 24s | 0.44 min |
+| assembleDebug | 26s | 0.48 min |
+| **合计** | — | **≈ 2.4 min**（增量；Gradle home 已预热） |
+
+附：v2 首轮（lint 修复前）为 lint FAILED（1m50s）+ test 39s + assemble 31s，仅作过程记录（见归档日志）。
+
+## 5. 产物与证据文件
+
+| 文件 | 内容 |
+| --- | --- |
+| `ARTIFACTS\app-debug-thirdlevel-v2-2026-11-13.apk` | **v2 最终交付 APK**（供 emulator-verifier 演示页 E2E） |
+| `ARTIFACTS\SHA256SUMS-2026-11-13.txt` | 交付物校验值（已追加 v2 APK） |
+| `evidence\build-v2\unit-test.log` | 单测完整日志（最终） |
+| `evidence\build-v2\unit-test-results-v2\` | 单测 XML（5 个）+ HTML 报告 |
+| `evidence\build-v2\lint.log` / `lint-summary.md` | Lint 完整日志与最终汇总（0 errors/415 warnings） |
+| `evidence\build-v2\lint-attempt1-5errors.log` / `lint-summary-attempt1-5errors.md` | 修复前 5 errors 归档 |
+| `evidence\build-v2\build-v2.log` | assembleDebug 完整日志（最终） |
+| `evidence\build-v2\apk-badging-v2.txt` | aapt2 badging 完整输出 |
+| `evidence\build-v2\apk-manifest-demo-activity.txt` | manifest xmltree（demo activity/exported） |
+| `evidence\build-v2\apk-signature-v2.txt` | apksigner verify 输出 |
+| `evidence\build-v2\build-summary-v2.txt` | 本文件 |
+
+## 6. 备注
+
+- 环境沿用上一轮 `build-home` 沙箱方案（`ANDROID_USER_HOME`/`GRADLE_USER_HOME`/`TEMP` 均在 workspace 内），
+  未修改 SDK 组件（emulator-verifier 并行安装的 emulator/system-image 不受影响）。
+- 未执行任何 git commit；未修改主工程源码（仅产生 `app/build`、`build` 等构建产物）。
+- C 盘构建后剩余约 18.1 GB。

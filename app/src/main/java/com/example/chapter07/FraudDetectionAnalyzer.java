@@ -60,14 +60,14 @@ public class FraudDetectionAnalyzer {
     // ========== OpenAI API 配置 ==========
     // TODO: 请替换为你的 OpenAI API Key
     private static final String OPENAI_API_KEY = "YOUR_OPENAI_API_KEY_HERE";
-    private static final String OPENAI_BASE_URL = "https://api.openai.com/v1";
+    private static final String OPENAI_BASE_URL = AiConfig.BASE_URL;
 
     // ========== Whisper API 配置 ==========
     private static final String WHISPER_API_URL = OPENAI_BASE_URL + "/audio/transcriptions";
 
     // ========== ChatGPT API 配置 ==========
     private static final String CHATGPT_API_URL = OPENAI_BASE_URL + "/chat/completions";
-    private static final String GPT_MODEL = "gpt-4o-mini";
+    private static final String GPT_MODEL = AiConfig.CHAT_MODEL;
 
     // ========== 诈骗检测提示词 ==========
     private static final String FRAUD_DETECTION_PROMPT =
@@ -505,7 +505,7 @@ public class FraudDetectionAnalyzer {
             sb = new StringBuilder();
             sb.append("\r\n--").append(boundary).append("\r\n");
             sb.append("Content-Disposition: form-data; name=\"model\"\r\n\r\n");
-            sb.append("whisper-1");
+            sb.append(AiConfig.ASR_MODEL);
             os.write(sb.toString().getBytes(StandardCharsets.UTF_8));
 
             // 添加 language 参数（可选）

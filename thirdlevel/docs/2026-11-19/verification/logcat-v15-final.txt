@@ -1,0 +1,53 @@
+﻿--------- beginning of main
+11-19 11:52:17.990 11131 11131 I ThirdLevelRisk: screen risk session started, 1200x2670
+11-19 11:52:18.008 11131 11131 I ThirdLevelRisk: overlay shown, width=1104px
+11-19 11:52:18.033 11131 11131 I ThirdLevelRisk: overlay update: 第三级检测已启动 | 每2秒检查一次屏幕变化
+11-19 11:52:18.033 11131 11131 I ThirdLevelRisk: overlay update: 检测中 | 画面：等待分析
+11-19 11:52:20.022 11131 16349 I ThirdLevelRisk: screen risk session stopped: 悬浮窗权限已撤销，请重新授权后开启检测
+11-19 11:53:19.307 11834 11834 I ThirdLevelRisk: screen risk session started, 1200x2670
+11-19 11:53:19.333 11834 11834 I ThirdLevelRisk: overlay shown, width=1104px
+11-19 11:53:19.334 11834 11834 I ThirdLevelRisk: overlay update: 第三级检测已启动 | 每2秒检查一次屏幕变化
+11-19 11:53:19.334 11834 11834 I ThirdLevelRisk: overlay update: 检测中 | 画面：等待分析
+11-19 11:53:21.590 11834 11834 D ThirdLevelRisk: OCR completed, textLength=22
+11-19 11:53:21.592 11834 11834 D ThirdLevelRisk: sending risk request, requestId=74b51178-0fe7-46d5-8456-24c8b4df88b5
+11-19 11:53:21.607 11834 11834 I ThirdLevelRisk: overlay update: 检测中 | 画面：等待分析 语音：未启用
+11-19 11:53:23.766 11834 11834 I ThirdLevelRisk: screen risk result: none, latencyMs=2171
+11-19 11:53:23.777 11834 11834 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 最近分析：刚刚，耗时 2.2s｜本次会话：分析 1 次，风险 0 次
+11-19 11:53:23.926 11834 16873 D ThirdLevelRisk: single limited frame ignored by hysteresis: BLACK
+11-19 11:53:25.969 11834 16873 W ThirdLevelRisk: frame quality limited: BLACK
+11-19 11:53:25.972 11834 11834 I ThirdLevelRisk: overlay update: 检测受限 | 画面：检测受限 画面：黑屏或受保护画面（可能被目标应用限制） 最近分析：2s 前，耗时 2.2s｜本次会话：分析 1 次，风险 0 次
+11-19 11:53:30.065 11834 11834 I ThirdLevelRisk: overlay update: 检测中 | 画面：等待分析
+11-19 11:53:30.066 11834 16873 I ThirdLevelRisk: frame quality recovered, continue analysis
+11-19 11:53:30.155 11834 11834 D ThirdLevelRisk: OCR completed, textLength=22
+11-19 11:53:30.156 11834 11834 D ThirdLevelRisk: sending risk request, requestId=f8c685f5-ccb5-4fb8-822c-8a5e3070161b
+11-19 11:53:30.162 11834 11834 I ThirdLevelRisk: overlay update: 检测中 | 画面：等待分析 语音：未启用
+11-19 11:53:31.356 11834 11834 I ThirdLevelRisk: screen risk result: none, latencyMs=1196
+11-19 11:53:31.367 11834 11834 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 最近分析：刚刚，耗时 1.2s｜本次会话：分析 2 次，风险 0 次
+11-19 11:53:32.236 11834 11834 D ThirdLevelRisk: OCR completed, textLength=70
+11-19 11:53:32.237 11834 11834 D ThirdLevelRisk: sending risk request, requestId=c24bb202-f9d0-4bbb-a69d-d642af3881ba
+11-19 11:53:32.248 11834 11834 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未启用
+11-19 11:53:33.777 11834 11834 I ThirdLevelRisk: screen risk result: high, latencyMs=1535
+11-19 11:53:33.794 11834 11834 I ThirdLevelRisk: overlay update: 存在风险 | 风险等级：高风险  画面分析： 备注: 洗钱案件资金核直教,请立即转入安全户 客服提示: 不要告诉任何人,转完发截图 要求向“安全账户”转账并索要保密，符合典型诈骗特征  最近分析：刚刚，耗时 1.5s｜本次会话：分析 3 次，风险 1 次
+11-19 11:53:34.296 11834 11834 D ThirdLevelRisk: OCR completed, textLength=70
+11-19 11:53:36.343 11834 11834 D ThirdLevelRisk: OCR completed, textLength=70
+11-19 11:53:40.889 11834 11834 D ThirdLevelRisk: OCR completed, textLength=22
+11-19 11:53:40.890 11834 11834 D ThirdLevelRisk: sending risk request, requestId=cf6f391d-563c-491d-a09a-842461652639
+11-19 11:53:42.189 11834 11834 I ThirdLevelRisk: screen risk result: none, latencyMs=1298
+11-19 11:53:42.201 11834 11834 I ThirdLevelRisk: overlay update: 存在风险 | 风险等级：高风险  画面分析： 备注: 洗钱案件资金核直教,请立即转入安全户 客服提示: 不要告诉任何人,转完发截图 要求向“安全账户”转账并索要保密，符合典型诈骗特征  最近分析：刚刚，耗时 1.3s｜本次会话：分析 4 次，风险 1 次
+11-19 11:53:42.951 11834 11834 D ThirdLevelRisk: OCR completed, textLength=22
+11-19 11:53:42.952 11834 11834 D ThirdLevelRisk: sending risk request, requestId=7412a668-40fb-4e1c-b63f-fec657c7ae7d
+11-19 11:53:44.390 11834 11834 I ThirdLevelRisk: screen risk result: none, latencyMs=1438
+11-19 11:53:44.400 11834 11834 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 最近分析：刚刚，耗时 1.4s｜本次会话：分析 5 次，风险 1 次
+11-19 11:53:45.008 11834 11834 D ThirdLevelRisk: OCR completed, textLength=22
+11-19 11:53:52.571 11834 11834 D ThirdLevelRisk: OCR completed, textLength=22
+11-19 11:53:52.572 11834 11834 D ThirdLevelRisk: sending risk request, requestId=ef15d23e-6e30-4036-bc62-86500fa1303e
+11-19 11:53:52.578 11834 11834 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未启用
+11-19 11:53:53.480 11834 11834 I ThirdLevelRisk: screen risk result: none, latencyMs=903
+11-19 11:53:53.495 11834 11834 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 最近分析：刚刚，耗时 903ms｜本次会话：分析 6 次，风险 1 次
+11-19 11:53:54.608 11834 11834 D ThirdLevelRisk: OCR completed, textLength=22
+11-19 11:53:54.609 11834 11834 D ThirdLevelRisk: sending risk request, requestId=8d790f9a-372c-49aa-a72d-abfd80debd9d
+11-19 11:53:54.617 11834 11834 I ThirdLevelRisk: overlay update: 检测中 | 画面：未发现风险 语音：未启用
+11-19 11:53:55.619 11834 11834 I ThirdLevelRisk: screen risk result: none, latencyMs=1006
+11-19 11:53:55.623 11834 11834 I ThirdLevelRisk: overlay update: 无风险 | 画面：未发现风险 最近分析：刚刚，耗时 1.0s｜本次会话：分析 7 次，风险 1 次
+11-19 11:53:56.590 11834 16873 D ThirdLevelRisk: single limited frame ignored by hysteresis: BLACK
+11-19 11:53:56.706 11834 11834 I ThirdLevelRisk: screen risk session stopped: 检测已停止

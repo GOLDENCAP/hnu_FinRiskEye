@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="third_level_title">第三级：跨应用金融风险检测</string>
+    <string name="third_level_description">用户主动授权后，系统截取当前屏幕并识别文字。为分析白板手写内容，降采样截图和OCR文字会发送到风险服务，但不会保存原始截图。</string>
+    <string name="third_level_server_hint">风险服务地址，例如 http://192.168.1.10:3100</string>
+    <string name="third_level_token_hint">风险服务测试令牌</string>
+    <string name="third_level_overlay_permission">授予悬浮窗权限</string>
+    <string name="third_level_audio_option">同时采集应用播放音频（设备支持时）</string>
+    <string name="third_level_start">开始跨应用风险检测</string>
+    <string name="third_level_stop">停止检测</string>
+    <string name="third_level_privacy">开始前请取得会议参与者同意。受系统或目标软件保护而无法截屏的画面将显示黑屏。</string>
+    <string name="third_level_not_started">尚未启动</string>
+    <string name="third_level_detecting">第三级检测已启动</string>
+    <string name="third_level_waiting">正在等待屏幕文字</string>
+
+    <!-- 演示/自测画面（12/15 演示与模拟器联调用，页面不含真实会议内容） -->
+    <string name="third_level_demo_entry">演示画面（自测用）</string>
+    <string name="third_level_demo_title">第三级演示画面（自测用）</string>
+    <string name="third_level_demo_notice">自测/演示用，不含真实会议内容</string>
+    <string name="third_level_demo_normal">普通画面</string>
+    <string name="third_level_demo_risk">风险转账页</string>
+    <string name="third_level_demo_close">返回检测页</string>
+    <string name="third_level_demo_image_desc">内置测试画面</string>
+
+    <!-- 受保护画面（FLAG_SECURE）自测页：验证黑屏→“检测受限”链路 -->
+    <string name="third_level_demo_protected">受保护画面（自测）</string>
+    <!-- 遗留页面测试入口：adb shell 无法启动 exported=false 的遗留 Activity，
+         需要 App 内置按钮进入，用于验证全局 edge-to-edge insets 兜底。 -->
+    <string name="third_level_demo_legacy">打开遗留页面（测试）</string>
+    <string name="third_level_protected_title">受保护画面（自测）</string>
+    <string name="third_level_protected_desc">本页已设置 FLAG_SECURE，系统禁止截屏与屏幕采集，MediaProjection 只能得到黑屏。\n\n用于验证检测端显示「检测受限 / 黑屏或受保护画面」，而不是误报「无风险」。</string>
+    <string name="third_level_protected_back">返回演示页</string>
+</resources>

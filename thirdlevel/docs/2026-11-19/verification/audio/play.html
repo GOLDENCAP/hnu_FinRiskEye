@@ -1,0 +1,17 @@
+﻿<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FinRiskEye audio test</title>
+<style>body{background:#fff;font-family:sans-serif;padding:24px} button{font-size:28px;padding:20px 40px}</style>
+</head>
+<body>
+<h2>风险语音播放测试</h2>
+<p>点击下面按钮开始播放（约 51 秒）。</p>
+<audio id="a" controls src="risk_voice.wav" preload="auto"></audio>
+<br><br>
+<button onclick="document.getElementById('a').play()">▶ 开始播放</button>
+<script>
+  var a = document.getElementById('a');
+  a.play().catch(function(){});
+</script>
+</body>
+</html>

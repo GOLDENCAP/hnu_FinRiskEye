@@ -1,0 +1,29 @@
+﻿==== Pure-JVM test run: third-level FrameQualityDetector ====
+Date: 2026-11-13 20:36:35 +08:00
+javac: javac 17.0.12
+Compile sources:
+  C:\Users\79047\Documents\deepseek-harness\default-workspace\finriskeye\hnu_FinRiskEye\thirdlevel\android\java\com\example\chapter07\thirdlevel\FrameQualityDetector.java
+  C:\Users\79047\Documents\deepseek-harness\default-workspace\finriskeye\hnu_FinRiskEye\thirdlevel\android\test\java\com\example\chapter07\thirdlevel\FrameQualityDetectorTest.java
+  C:\Users\79047\Documents\deepseek-harness\default-workspace\finriskeye\evidence\android\jvm-test\src\org\junit\Test.java
+  C:\Users\79047\Documents\deepseek-harness\default-workspace\finriskeye\evidence\android\jvm-test\src\org\junit\Assert.java
+  C:\Users\79047\Documents\deepseek-harness\default-workspace\finriskeye\evidence\android\jvm-test\src\JunitLiteRunner.java
+Compile output dir: C:\Users\79047\AppData\Local\Temp\finriskeye-frame-quality-tests
+javac exit code: 0
+
+Run: java -cp <temp classes dir> JunitLiteRunner
+java exit code: 0
+[PASS] brightSolidColorFrameIsBlank
+[PASS] classificationBoundariesAreConservative
+[PASS] darkModeScreenWithTextIsNotLimited
+[PASS] invalidPixelsAreTreatedAsOk
+[PASS] lightGrayBlankFrameIsBlank
+[PASS] nearBlackUniformFrameIsBlack
+[PASS] noisyDarkVideoFrameIsNotFlaggedAsBlack
+[PASS] normalContentFrameIsOk
+[PASS] pureBlackFrameIsBlack
+[PASS] uniformDarkBackgroundIsNotFlaggedAsBlack
+[PASS] whiteBlankFrameIsBlank
+
+Tests run: 11, Passed: 11, Failed: 0
+
+RESULT: PASS
