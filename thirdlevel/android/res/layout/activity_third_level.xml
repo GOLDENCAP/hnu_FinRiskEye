@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/thirdLevelRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/third_level_title"
+            android:textColor="@color/third_level_text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/third_level_description"
+            android:textColor="@color/third_level_text_secondary"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/riskServerUrlInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/third_level_server_hint"
+            android:inputType="textUri"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/riskApiTokenInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/third_level_token_hint"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/thirdLevelOverlayPermissionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/third_level_overlay_permission" />
+
+        <Button
+            android:id="@+id/thirdLevelDemoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/third_level_demo_entry" />
+
+        <CheckBox
+            android:id="@+id/thirdLevelAudioCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/third_level_audio_option" />
+
+        <Button
+            android:id="@+id/thirdLevelStartButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/third_level_start" />
+
+        <Button
+            android:id="@+id/thirdLevelStopButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:enabled="false"
+            android:text="@string/third_level_stop" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/third_level_privacy"
+            android:textColor="@color/third_level_text_secondary"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/thirdLevelStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/third_level_status_background"
+            android:minHeight="72dp"
+            android:padding="14dp"
+            android:text="@string/third_level_not_started"
+            android:textColor="@color/third_level_text_primary"
+            android:textSize="15sp" />
+    </LinearLayout>
+</ScrollView>

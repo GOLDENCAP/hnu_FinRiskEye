@@ -64,9 +64,9 @@ public class FraudVideoAnalyzer implements VideoSink {
     // ========== OpenAI API 配置（硬编码） ==========
     // TODO: 请替换为你的 OpenAI API Key
     private static final String OPENAI_API_KEY = "YOUR_OPENAI_API_KEY_HERE";
-    private static final String OPENAI_BASE_URL = "https://api.openai.com/v1";
+    private static final String OPENAI_BASE_URL = AiConfig.BASE_URL;
     private static final String CHATGPT_API_URL = OPENAI_BASE_URL + "/chat/completions";
-    private static final String GPT_VISION_MODEL = "gpt-4o-mini"; // 支持视觉的模型
+    private static final String GPT_VISION_MODEL = AiConfig.VISION_MODEL; // 支持视觉的模型
 
     // ========== 采样参数 ==========
     // 默认每 5 秒采样一帧（避免 API 调用太频繁）

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="third_level_text_primary">#202124</color>
+    <color name="third_level_text_secondary">#5F6368</color>
+    <color name="third_level_status_background">#F1F3F4</color>
+</resources>

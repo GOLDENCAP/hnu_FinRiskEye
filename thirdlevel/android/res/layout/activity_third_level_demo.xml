@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  第三级演示/自测画面页：全屏显示内置测试画面，供 12/15 演示与模拟器联调。
+  页面不设置 FLAG_SECURE，因此可以被 MediaProjection 正常采集。
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/thirdLevelDemoRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111111"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/thirdLevelDemoNotice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/third_level_demo_notice"
+        android:textColor="#FFD54F"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/thirdLevelDemoImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/third_level_demo_image_desc"
+        android:scaleType="fitCenter" />
+
+    <Button
+        android:id="@+id/thirdLevelDemoProtectedButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/third_level_demo_protected" />
+
+    <Button
+        android:id="@+id/thirdLevelDemoLegacyButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/third_level_demo_legacy" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="10dp">
+
+        <Button
+            android:id="@+id/thirdLevelDemoNormalButton"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_weight="1"
+            android:text="@string/third_level_demo_normal" />
+
+        <Button
+            android:id="@+id/thirdLevelDemoRiskButton"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="@string/third_level_demo_risk" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/thirdLevelDemoCloseButton"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/third_level_demo_close" />
+</LinearLayout>

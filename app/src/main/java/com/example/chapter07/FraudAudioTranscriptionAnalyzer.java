@@ -59,11 +59,11 @@ public class FraudAudioTranscriptionAnalyzer {
 
     // ========== OpenAI API（硬编码） ==========
     private static final String OPENAI_API_KEY = "YOUR_OPENAI_API_KEY_HERE";
-    private static final String OPENAI_BASE_URL = "https://api.openai.com/v1";
+    private static final String OPENAI_BASE_URL = AiConfig.BASE_URL;
     private static final String WHISPER_API_URL = OPENAI_BASE_URL + "/audio/transcriptions";
     private static final String CHATGPT_API_URL = OPENAI_BASE_URL + "/chat/completions";
-    private static final String WHISPER_MODEL = "whisper-1";
-    private static final String GPT_MODEL = "gpt-4o-mini";
+    private static final String WHISPER_MODEL = AiConfig.ASR_MODEL;
+    private static final String GPT_MODEL = AiConfig.CHAT_MODEL;
     // Whisper 支持把音频转录为带时间戳的段落，便于取证
     private static final String WHISPER_RESPONSE_FORMAT = "verbose_json";
     private static final String WHISPER_LANGUAGE = "zh"; // 中文优先；Whisper 会自动识别英文

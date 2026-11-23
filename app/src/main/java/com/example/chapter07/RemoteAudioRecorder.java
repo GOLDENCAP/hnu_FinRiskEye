@@ -1,6 +1,7 @@
 package com.example.chapter07;  // 声明类所在的包名
 
 // ========== Android 音视频相关 import ==========
+import android.annotation.SuppressLint;               // lint 抑制注解（仅编译期，不改运行时权限行为）
 import android.content.Context;                       // Android 上下文（本类未直接使用）
 import android.media.AudioFormat;                    // 音频格式常量
 import android.media.AudioRecord;                     // 麦克风录音 API
@@ -83,6 +84,10 @@ public class RemoteAudioRecorder {  // 远端音频录制器
      * @param outputPath 输出文件路径
      * @return 是否成功
      */
+    // 说明：本类只是前两级通话的音频录制工具，RECORD_AUDIO 权限由调用方在进入通话前
+    // 通过 EasyPermissions 动态申请（见 MainActivity），AudioRecord 只会在授权后创建。
+    // 这里用 lint 抑制避免静态检查误报，不改变任何运行时权限行为。
+    @SuppressLint("MissingPermission")
     public boolean startRecording(String outputPath) {
         synchronized (mLock) {                          // 加锁保护
             if (mIsRecording) {                         // 已在录制

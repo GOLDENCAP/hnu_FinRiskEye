@@ -195,7 +195,14 @@ public class GlobalTouchAdvancedActivity extends AppCompatActivity {
         intent.putExtra("database_name", customDbName + ".db");
 
         // 启动前台服务
-        startForegroundService(intent);
+        // 说明：前两级遗留代码原先直接调用 startForegroundService（API 26+），
+        // 在 Android 7.x 及以下设备上会 NoSuchMethodError/被 lint 报 NewApi。
+        // 这里按系统版本保护：API 26+ 用 startForegroundService，低版本回退 startService。
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            startForegroundService(intent);
+        } else {
+            startService(intent);
+        }
 
         // 显示提示
         showToast("服务已启动，记录将保存到：" + customDbName + ".db");

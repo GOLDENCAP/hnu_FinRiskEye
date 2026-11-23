@@ -10,6 +10,7 @@ import android.widget.EditText;           // 引入 EditText 控件类，登录�
 
 import androidx.appcompat.app.AppCompatActivity;  // 引入 AppCompatActivity，AndroidX 提供的带 ActionBar 兼容的 Activity 基类
 import com.example.chapter07.databinding.ActivityMainBinding;  // ViewBinding 自动生成的绑定类
+import com.example.chapter07.thirdlevel.ThirdLevelActivity;
 
 // ========== 第三方依赖 ==========
 import pub.devrel.easypermissions.EasyPermissions;  // 简化 Android 运行时权限申请流程的第三方库
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {  // 继承 AppCompatActivi
         binding = ActivityMainBinding.inflate(getLayoutInflater()); // 通过 LayoutInflater 把 activity_main.xml 转为 binding 对象
         setContentView(binding.getRoot());                          // 把 binding 的根布局设置为 Activity 的内容视图
 
+        // Android 15+ 强制 edge-to-edge：为根布局补系统栏 padding，避免首行内容被状态栏/标题栏遮挡。
+        EdgeToEdgeInsets.apply(this, binding.getRoot());
+
         SignalClient.getInstance().init(this);                      // 初始化信令客户端单例，传入当前 Context（用于加载 HTTPS 证书）
 
         // 获取"服务器地址"和"房间名"两个输入框的引用（用 final 局部变量以便在内部类中访问）
@@ -58,6 +62,10 @@ public class MainActivity extends AppCompatActivity {  // 继承 AppCompatActivi
                 }
             }
         });
+
+        // 第三级入口独立于前两级通话链路，内部实现全部位于 thirdlevel 包。
+        binding.thirdLevelEntryBtn.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, ThirdLevelActivity.class)));
 
         // ========== 运行时权限申请：摄像头 + 麦克风 ==========
         String[] perms = {                                          // 要申请的权限数组
